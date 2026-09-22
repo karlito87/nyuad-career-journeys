@@ -421,11 +421,11 @@ footer strong{color:#ffffff}
     <div class="prog-bar">
       <div class="prog-lbl">Your progression path</div>
       <div class="prog-tr" aria-live="polite" aria-label="Your progression path">
-        <div class="pseg b1" id="ps1">Learn</div>
-        <div class="pseg b2 off" id="ps2">Apply</div>
-        <div class="pseg b3 off" id="ps3">Strengthen</div>
-        <div class="pseg b4 off" id="ps4">Lead</div>
-        <div class="pseg b5 off" id="ps5">Transform</div>
+        <div class="pseg b1" id="ps1" style="background:#a8ccee;color:#001030;">Learn</div>
+        <div class="pseg b2 off" id="ps2" style="background:#e8e0f0;color:#4a4060;">Apply</div>
+        <div class="pseg b3 off" id="ps3" style="background:#e8e0f0;color:#4a4060;">Strengthen</div>
+        <div class="pseg b4 off" id="ps4" style="background:#e8e0f0;color:#4a4060;">Lead</div>
+        <div class="pseg b5 off" id="ps5" style="background:#e8e0f0;color:#4a4060;">Transform</div>
       </div>
     </div>
   </div>
@@ -865,7 +865,7 @@ function setFamily(f){curFamily=f;setBand(curBand);}
 
 
 let curBand=1;
-function setBand(n){curBand=n;applyBandStyles(n);document.querySelectorAll('.bb').forEach((b,i)=>b.setAttribute('aria-pressed',i===n-1?'true':'false'));const bctx=document.getElementById('bctx');bctx.className='bctx '+BANDS[n].cls;document.getElementById('bctxT').textContent=BANDS[n].label;document.getElementById('bctxD').textContent=BANDS[n].desc;const fam=curFamily?FAMILIES[curFamily]:null;document.getElementById('cgrid').innerHTML=COMPS.map(c=>{const famCtx=fam&&fam.ctx[c.name]?`<div class="family-ctx"><i class="ti ti-briefcase" style="font-size:10px;margin-right:4px;" aria-hidden="true"></i>${fam.name}: ${fam.ctx[c.name][n-1]} <a href="https://lnkd.in/dua4b9t" target="_blank" rel="noopener" style="color:#2a0445;font-weight:800;text-decoration:underline;white-space:nowrap;" aria-label="Explore ${fam.name} learning paths in the Career Hub (opens in new tab)">Explore ${fam.name} paths in Career Hub →</a></div>`:'';return`<div class="ccard"><div class="cc-hd"><div class="cc-ic" aria-hidden="true"><i class="ti ${c.icon}"></i></div><div><div class="cc-nm">${c.name}</div><div class="cc-df">${c.def}</div></div></div><div class="cc-beh">${c.bands[n-1]}</div>${famCtx}<a href="${c.urls[n-1].url}" target="_blank" rel="noopener" class="cc-ll" aria-label="${c.urls[n-1].label} on LinkedIn Learning (opens in new tab)"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> ${c.urls[n-1].label}</a></div>`;}).join('');for(let i=1;i<=5;i++) document.getElementById('ps'+i).classList.toggle('off',i>n);}
+function setBand(n){curBand=n;applyBandStyles(n);document.querySelectorAll('.bb').forEach((b,i)=>b.setAttribute('aria-pressed',i===n-1?'true':'false'));const bctx=document.getElementById('bctx');bctx.className='bctx '+BANDS[n].cls;document.getElementById('bctxT').textContent=BANDS[n].label;document.getElementById('bctxD').textContent=BANDS[n].desc;const fam=curFamily?FAMILIES[curFamily]:null;document.getElementById('cgrid').innerHTML=COMPS.map(c=>{const famCtx=fam&&fam.ctx[c.name]?`<div class="family-ctx"><i class="ti ti-briefcase" style="font-size:10px;margin-right:4px;" aria-hidden="true"></i>${fam.name}: ${fam.ctx[c.name][n-1]} <a href="https://lnkd.in/dua4b9t" target="_blank" rel="noopener" style="color:#2a0445;font-weight:800;text-decoration:underline;white-space:nowrap;" aria-label="Explore ${fam.name} learning paths in the Career Hub (opens in new tab)">Explore ${fam.name} paths in Career Hub →</a></div>`:'';return`<div class="ccard"><div class="cc-hd"><div class="cc-ic" aria-hidden="true"><i class="ti ${c.icon}"></i></div><div><div class="cc-nm">${c.name}</div><div class="cc-df">${c.def}</div></div></div><div class="cc-beh">${c.bands[n-1]}</div>${famCtx}<a href="${c.urls[n-1].url}" target="_blank" rel="noopener" class="cc-ll" aria-label="${c.urls[n-1].label} on LinkedIn Learning (opens in new tab)"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> ${c.urls[n-1].label}</a></div>`;}).join('');for(let i=1;i<=5;i++){const seg=document.getElementById('ps'+i);const cols={1:['#a8ccee','#001030'],2:['#a8cc98','#061800'],3:['#f0cc60','#1a0800'],4:['#e8a0b8','#200008'],5:['#b8a8e8','#080420']};if(i>n){seg.style.background='#e8e0f0';seg.style.color='#4a4060';}else{seg.style.background=cols[i][0];seg.style.color=cols[i][1];}seg.classList.toggle('off',i>n);}}
 setBand(1);
 
 
