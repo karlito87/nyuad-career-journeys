@@ -38,7 +38,7 @@ nav{background:#3a0560;padding:0;display:flex;align-items:center;height:56px;pos
 .hstats{display:flex;margin:40px auto 0;max-width:680px;background:#3a0560;border:2px solid #6a2090;border-radius:12px;overflow:hidden}
 .hstat{flex:1;padding:16px;text-align:center;border-right:1px solid #6a2090}
 .hstat:last-child{border-right:none}
-.hstat-n{font-size:22px;font-weight:900;color:#ffffff;display:block}
+.hstat-n{font-size:22px;font-weight:900;color:#ffffff;display:block}.hstat::before{content:attr(data-n);display:block;font-size:22px;font-weight:900;color:#ffffff;line-height:1;margin-bottom:4px}
 .hstat-l{font-size:12px;color:#ffffff;margin-top:2px;display:block;font-weight:700}
 section{padding:52px 0;background:#eeece6}
 section.alt{background:#ffffff}
@@ -296,9 +296,9 @@ footer strong{color:#ffffff}
     <button class="btn" onclick="goTo('competencies')">Core competencies</button>
   </div>
   <div class="hstats" role="list" aria-label="Career Journeys key statistics">
-    <div class="hstat" role="listitem"><span class="hstat-n" aria-hidden="true" style="color:transparent;text-shadow:0 0 0 #ffffff;">4</span><span class="hstat-l">Journey stages</span></div>
-    <div class="hstat" role="listitem"><span class="hstat-n" aria-hidden="true" style="color:transparent;text-shadow:0 0 0 #ffffff;">5</span><span class="hstat-l">Core competencies</span></div>
-    <div class="hstat"><span class="hstat-n" aria-hidden="true" style="color:transparent;text-shadow:0 0 0 #ffffff;">Learn → Transform</span><span class="hstat-l">Growth journey</span></div>
+    <div class="hstat" role="listitem" data-n="4"><span class="hstat-l">Journey stages</span></div>
+    <div class="hstat" role="listitem" data-n="5"><span class="hstat-l">Core competencies</span></div>
+    <div class="hstat" role="listitem" data-n="Learn → Transform"><span class="hstat-l">Growth journey</span></div>
   </div>
 </div>
 
