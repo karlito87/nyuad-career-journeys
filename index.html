@@ -35,11 +35,11 @@ nav{background:#3a0560;padding:0;display:flex;align-items:center;height:56px;pos
 .hero-sub{font-size:16px;color:#ffffff;max-width:680px;margin:0 auto 28px;line-height:1.65}
 .hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
 .hbtns .btn{width:auto;padding:12px 26px;font-size:14px}
-.hstats{display:flex;margin:40px auto 0;max-width:680px;background:#3a0560;border:2px solid #6a2090;border-radius:12px;overflow:hidden}
-.hstat{flex:1;padding:16px;text-align:center;border-right:1px solid #6a2090}
+.hstats{display:flex;margin:40px auto 0;max-width:680px;background:#3a0560;border:1px solid rgba(255,255,255,0.3);border-radius:12px;overflow:hidden}
+.hstat{flex:1;padding:16px;text-align:center;border-right:1px solid rgba(255,255,255,0.2)}
 .hstat:last-child{border-right:none}
-.hstat-n{font-size:22px;font-weight:900;color:#ffffff;display:block}.hstat::before{content:attr(data-n);display:block;font-size:22px;font-weight:900;color:#ffffff;line-height:1;margin-bottom:4px}
-.hstat-l{font-size:12px;color:#ffffff;margin-top:2px;display:block;font-weight:700}
+.hstat-n{font-size:22px;font-weight:900;color:#ffffff;display:block}
+.hstat-l{font-size:13px;color:#ffffff;margin-top:4px;display:block;font-weight:700}
 section{padding:52px 0;background:#eeece6}
 section.alt{background:#ffffff}
 .ct{max-width:1100px;margin:0 auto;width:100%;padding:0 2rem}
@@ -296,9 +296,9 @@ footer strong{color:#ffffff}
     <button class="btn" onclick="goTo('competencies')">Core competencies</button>
   </div>
   <div class="hstats" role="list" aria-label="Career Journeys key statistics">
-    <div class="hstat" role="listitem" data-n="4"><span class="hstat-l">Journey stages</span></div>
-    <div class="hstat" role="listitem" data-n="5"><span class="hstat-l">Core competencies</span></div>
-    <div class="hstat" role="listitem" data-n="Learn → Transform"><span class="hstat-l">Growth journey</span></div>
+    <div class="hstat" role="listitem"><span class="hstat-n">4</span><span class="hstat-l">Journey stages</span></div>
+    <div class="hstat" role="listitem"><span class="hstat-n">5</span><span class="hstat-l">Core competencies</span></div>
+    <div class="hstat" role="listitem"><span class="hstat-n">Learn → Transform</span><span class="hstat-l">Growth journey</span></div>
   </div>
 </div>
 
@@ -1056,7 +1056,7 @@ function coachSugg(t) {
   <!-- Toggle button -->
   <button onclick="toggleCoach()" style="width:56px;height:56px;border-radius:50%;background:#57068C;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(87,6,140,0.4);position:relative;" aria-label="Open Kiara — AI Career Coach by NYUAD Human Resources">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    <span id="coachBadge" style="position:absolute;top:-8px;right:-8px;background:#f59e0b;border-radius:10px;border:2px solid #fff;font-size:12px;font-weight:900;color:#fff;padding:3px 8px;white-space:nowrap;" aria-label="Coming soon">Soon</span>
+    <span id="coachBadge" style="position:absolute;top:-8px;right:-8px;background:#92400e;border-radius:10px;border:2px solid #fff;font-size:12px;font-weight:900;color:#ffffff;padding:3px 8px;white-space:nowrap;" aria-label="Coming soon">Soon</span>
   </button>
 </div>
 
