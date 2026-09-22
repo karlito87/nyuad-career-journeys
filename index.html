@@ -69,7 +69,10 @@ section.alt{background:#ffffff}
 .fcard.discover .discover-cta{background:#f8f2ff;border-radius:9px;padding:12px 14px;margin-top:10px;border:1.5px dashed #9b59c8}
 .fcard.discover .discover-cta p{font-size:12px;color:#3a0560;font-weight:600;margin-bottom:8px;line-height:1.5}
 .fcard.discover .discover-cta .btn{margin-top:0}
-.fnum{position:absolute;top:13px;right:16px;font-size:38px;font-weight:900;color:transparent;text-shadow:0 0 0 #d4b8f0;line-height:1;user-select:none}
+.fnum{position:absolute;top:13px;right:16px;font-size:38px;font-weight:900;line-height:1;user-select:none;color:transparent;overflow:hidden;width:0;height:0}
+.fw-grid{counter-reset:fcard}
+.fcard{counter-increment:fcard}
+.fcard::after{content:counter(fcard);position:absolute;top:13px;right:16px;font-size:38px;font-weight:900;color:#d4b8f0;line-height:1;pointer-events:none;aria-hidden:true}
 .fbadge{display:inline-block;background:#57068C;color:#fff;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:800;letter-spacing:.5px;margin-bottom:9px;text-transform:uppercase}
 .fcard h3{font-size:15px;font-weight:800;margin-bottom:3px;color:#111}
 .ftag{font-size:12px;color:#3a0560;font-weight:800;margin-bottom:7px}
