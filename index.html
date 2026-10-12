@@ -157,23 +157,11 @@ section.alt{background:#fbfaf6}
 .mcard{background:#fbfaf6;border:2px solid #ccc;border-radius:12px;padding:19px 17px}
 .m-ic{font-size:22px;color:#57068C;margin-bottom:8px;display:block}
 .m-t{font-size:16px;font-weight:800;color:#111;margin-bottom:6px}
-.m-item{font-size:16px;color:#333;display:flex;align-items:center;gap:6px;margin-bottom:4px}
-.m-dot{width:5px;height:5px;border-radius:50%;background:#57068C;flex-shrink:0}
-.nps-box{background:#fbfaf6;border:2px solid #ccc;border-radius:13px;padding:22px;margin-top:22px}
-.nps-box h3{font-size:16px;font-weight:800;color:#111;margin-bottom:6px}
-.nps-box>p{font-size:16px;color:#333;margin-bottom:15px;line-height:1.55}
-.nps-scale{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:7px}
-.ns{width:40px;height:40px;border-radius:7px;border:none;cursor:pointer;font-size:14px;font-weight:900;color:#fff;transition:all .18s;display:flex;align-items:center;justify-content:center}
-.ns:hover{opacity:.8;transform:scale(1.08)}
-.ns.det{background:#c0392b}.ns.pas{background:#c8880a}.ns.pro{background:#2e7d32}
-.ns.sel{transform:scale(1.14);outline:3px solid #111;outline-offset:2px}
-.nps-lbls{display:flex;justify-content:space-between;font-size:14px;color:#444;font-weight:700;margin-bottom:13px}
-.nps-comment{width:100%;border:2px solid #bbb;border-radius:8px;padding:9px 12px;font-size:16px;color:#111;resize:vertical;min-height:58px;font-family:inherit;background:#f8f6f2}
-.nps-comment:focus{border-color:#57068C}
-.nps-submit-wrap{margin-top:9px}
-.nps-submit-wrap .btn{width:auto;padding:11px 24px}
-.nps-thanks{background:#dcedc8;border:2px solid #2e7d32;border-radius:9px;padding:13px 17px;margin-top:11px;display:none}
-.nps-thanks p{font-size:16px;color:#1a4a0a;font-weight:700}
+.m-item{font-size:16px;color:#333;display:flex;align-items:flex-start;gap:8px;margin-bottom:4px;line-height:1.5}
+.m-dot{width:6px;height:6px;border-radius:50%;background:#57068C;flex-shrink:0;margin-top:.55em}
+.feedback-box{background:#fbfaf6;border:2px solid #ccc;border-radius:13px;padding:22px;margin-top:22px}
+.feedback-box h3{font-size:16px;font-weight:800;color:#111;margin-bottom:6px}
+.feedback-box>p{font-size:16px;color:#333;margin-bottom:15px;line-height:1.55}
 .ai-sec{background:#3a0560;padding:52px 0}
 .ai-in{max-width:1100px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
 .ai-info{color:#fff}
@@ -487,12 +475,12 @@ footer strong{color:rgba(255,255,255,0.8)}
     <div class="ssub">Career Journeys is built on accountability. Here is what NYUAD HR commits to tracking — and reporting back to the community.</div>
     <div class="mgrid">
       <div class="mcard"><span class="m-ic"><i class="ti ti-chart-bar" aria-hidden="true"></i></span><div class="m-t">Adoption</div><div class="m-item"><span class="m-dot"></span>% of employees with an active Career Journey</div><div class="m-item"><span class="m-dot"></span>% of managers holding dedicated career conversations</div><div style="font-size:14px;color:#595959;margin-top:8px;display:flex;align-items:center;gap:5px;"><i class="ti ti-database" style="font-size:14px;" aria-hidden="true"></i> Tracked via LinkedIn Career Hub & PeopleSync</div></div>
-      <div class="mcard"><span class="m-ic"><i class="ti ti-mood-happy" aria-hidden="true"></i></span><div class="m-t">Experience</div><div class="m-item"><span class="m-dot"></span>Employee NPS — would you recommend Career Journeys?</div><div class="m-item"><span class="m-dot"></span>Perceived value of career conversations with managers</div><div class="m-item"><span class="m-dot"></span>Readiness for future roles</div><div style="font-size:14px;color:#595959;margin-top:8px;display:flex;align-items:center;gap:5px;"><i class="ti ti-clipboard-check" style="font-size:14px;" aria-hidden="true"></i> Tracked via Qualtrics pulse survey — twice per year</div></div>
+      <div class="mcard"><span class="m-ic"><i class="ti ti-mood-happy" aria-hidden="true"></i></span><div class="m-t">Experience</div><div class="m-item"><span class="m-dot"></span>Employee feedback — how people rate their Career Journeys experience</div><div class="m-item"><span class="m-dot"></span>Perceived value of career conversations with managers</div><div class="m-item"><span class="m-dot"></span>Readiness for future roles</div><div style="font-size:14px;color:#595959;margin-top:8px;display:flex;align-items:center;gap:5px;"><i class="ti ti-clipboard-check" style="font-size:14px;" aria-hidden="true"></i> Tracked via Qualtrics pulse survey — twice per year</div></div>
       <div class="mcard"><span class="m-ic"><i class="ti ti-rocket" aria-hidden="true"></i></span><div class="m-t">Outcomes</div><div class="m-item"><span class="m-dot"></span>Internal mobility and career movement rates</div><div class="m-item"><span class="m-dot"></span>Retention of key talent across NYUAD</div><div style="font-size:14px;color:#595959;margin-top:8px;display:flex;align-items:center;gap:5px;"><i class="ti ti-database" style="font-size:14px;" aria-hidden="true"></i> Tracked via PeopleSync HR data — annually</div></div>
     </div>
-    <div class="nps-box">
-      <h3 id="nps-heading">Share your experience — Career Journeys NPS</h3>
-      <p>How likely are you to recommend Career Journeys to a colleague? Your feedback directly shapes how we improve the programme for the NYUAD community.</p>
+    <div class="feedback-box">
+      <h3 id="feedback-heading">Share your experience</h3>
+      <p>Tell us how Career Journeys is working for you. Your feedback directly shapes how we improve the programme for the NYUAD community.</p>
       <a href="https://nyu.qualtrics.com/jfe/form/SV_9sQth1H0SrEVXVk" target="_blank" rel="noopener" class="btn primary" style="width:auto;padding:13px 28px;font-size:14px;margin-top:14px;text-decoration:none;" aria-label="Share your Career Journeys feedback (opens Qualtrics survey in new tab)">
         <i class="ti ti-clipboard-check" aria-hidden="true"></i> Share your feedback
       </a>
