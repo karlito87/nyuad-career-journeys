@@ -396,13 +396,14 @@ footer strong{color:rgba(255,255,255,0.8)}
     </div>
     <p id="stageLbl" class="step-lbl">Step 2 · Choose your stage</p>
     <div class="band-nav" id="bandNav" role="tablist" aria-labelledby="stageLbl">
-      <button type="button" class="bb" role="tab" id="tab-1" data-band="1" aria-selected="true" aria-controls="bandPanel" tabindex="0" onclick="setBand(1)"><span class="bbl">Learn</span><span class="bbd">Build foundations</span></button>
-      <button type="button" class="bb" role="tab" id="tab-2" data-band="2" aria-selected="false" aria-controls="bandPanel" tabindex="-1" onclick="setBand(2)"><span class="bbl">Apply</span><span class="bbd">Own your work</span></button>
-      <button type="button" class="bb" role="tab" id="tab-3" data-band="3" aria-selected="false" aria-controls="bandPanel" tabindex="-1" onclick="setBand(3)"><span class="bbl">Strengthen</span><span class="bbd">Deepen & influence</span></button>
-      <button type="button" class="bb" role="tab" id="tab-4" data-band="4" aria-selected="false" aria-controls="bandPanel" tabindex="-1" onclick="setBand(4)"><span class="bbl">Lead</span><span class="bbd">Guide & shape</span></button>
-      <button type="button" class="bb" role="tab" id="tab-5" data-band="5" aria-selected="false" aria-controls="bandPanel" tabindex="-1" onclick="setBand(5)"><span class="bbl">Transform</span><span class="bbd">Strategic impact</span></button>
+      <button type="button" class="bb" role="tab" id="tab-1" data-band="1" aria-selected="true" aria-controls="bandPanel-1" tabindex="0" onclick="setBand(1)"><span class="bbl">Learn</span><span class="bbd">Build foundations</span></button>
+      <button type="button" class="bb" role="tab" id="tab-2" data-band="2" aria-selected="false" aria-controls="bandPanel-2" tabindex="-1" onclick="setBand(2)"><span class="bbl">Apply</span><span class="bbd">Own your work</span></button>
+      <button type="button" class="bb" role="tab" id="tab-3" data-band="3" aria-selected="false" aria-controls="bandPanel-3" tabindex="-1" onclick="setBand(3)"><span class="bbl">Strengthen</span><span class="bbd">Deepen & influence</span></button>
+      <button type="button" class="bb" role="tab" id="tab-4" data-band="4" aria-selected="false" aria-controls="bandPanel-4" tabindex="-1" onclick="setBand(4)"><span class="bbl">Lead</span><span class="bbd">Guide & shape</span></button>
+      <button type="button" class="bb" role="tab" id="tab-5" data-band="5" aria-selected="false" aria-controls="bandPanel-5" tabindex="-1" onclick="setBand(5)"><span class="bbl">Transform</span><span class="bbd">Strategic impact</span></button>
     </div>
-    <div id="bandPanel" class="band-panel" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+    <div id="bandPanel-1" class="band-panel" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+    <div id="bandContent">
     <!-- Job family recommended course -->
     <div id="familyPathWrap" style="display:none;">
       <div class="family-path-card">
@@ -422,6 +423,11 @@ footer strong{color:rgba(255,255,255,0.8)}
     <div id="bctx" class="bctx b1"><h3 id="bctxT">Learn</h3><p id="bctxD">You build awareness, develop foundational skills, and begin to understand how you contribute within your role and team.</p></div>
     <div class="cgrid" id="cgrid"></div>
     </div>
+    </div>
+    <div id="bandPanel-2" class="band-panel" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden></div>
+    <div id="bandPanel-3" class="band-panel" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden></div>
+    <div id="bandPanel-4" class="band-panel" role="tabpanel" aria-labelledby="tab-4" tabindex="0" hidden></div>
+    <div id="bandPanel-5" class="band-panel" role="tabpanel" aria-labelledby="tab-5" tabindex="0" hidden></div>
     <div id="liveStatus" class="sr-only" role="status" aria-live="polite"></div>
 
   </div>
@@ -1070,7 +1076,7 @@ function setFamily(f){
 
 
 let curBand=1;
-function setBand(n){curBand=n;applyBandStyles(n);document.querySelectorAll('.bb').forEach((b,i)=>{b.setAttribute('aria-selected',i===n-1?'true':'false');b.tabIndex=(i===n-1)?0:-1;});document.getElementById('bandPanel').setAttribute('aria-labelledby','tab-'+n);const bctx=document.getElementById('bctx');bctx.className='bctx '+BANDS[n].cls;document.getElementById('bctxT').textContent=BANDS[n].label;document.getElementById('bctxD').textContent=BANDS[n].desc;const fam=curFamily?FAMILIES[curFamily]:null;document.getElementById('cgrid').innerHTML=COMPS.map(c=>{const famCtx=fam&&fam.ctx[c.name]?`<div class="family-ctx"><i class="ti ti-briefcase" style="font-size:14px;margin-right:4px;" aria-hidden="true"></i>${fam.name}: ${fam.ctx[c.name][n-1]} <a href="https://lnkd.in/dua4b9t" target="_blank" rel="noopener" style="color:#57068C;font-weight:800;text-decoration:underline;">Explore ${fam.name} paths in Career Hub <span aria-hidden="true">→</span><span class="sr-only"> (opens in new tab)</span></a></div>`:'';return`<div class="ccard"><div class="cc-hd"><div class="cc-ic" aria-hidden="true"><i class="ti ${c.icon}" aria-hidden="true"></i></div><div><h4 class="cc-nm">${c.name}</h4><div class="cc-df">${c.def}</div></div></div><div class="cc-beh">${c.bands[n-1]}</div>${famCtx}<a href="${c.urls[n-1].url}" target="_blank" rel="noopener" class="cc-ll"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> ${c.urls[n-1].label}<span class="sr-only"> on LinkedIn Learning (opens in new tab)</span></a></div>`;}).join('');renderFamilyPath();}
+function setBand(n){curBand=n;applyBandStyles(n);document.querySelectorAll('.bb').forEach((b,i)=>{b.setAttribute('aria-selected',i===n-1?'true':'false');b.tabIndex=(i===n-1)?0:-1;});for(var pi=1;pi<=5;pi++){document.getElementById('bandPanel-'+pi).hidden=(pi!==n);}var bandActive=document.getElementById('bandPanel-'+n),bandC=document.getElementById('bandContent');if(bandC.parentNode!==bandActive)bandActive.appendChild(bandC);const bctx=document.getElementById('bctx');bctx.className='bctx '+BANDS[n].cls;document.getElementById('bctxT').textContent=BANDS[n].label;document.getElementById('bctxD').textContent=BANDS[n].desc;const fam=curFamily?FAMILIES[curFamily]:null;document.getElementById('cgrid').innerHTML=COMPS.map(c=>{const famCtx=fam&&fam.ctx[c.name]?`<div class="family-ctx"><i class="ti ti-briefcase" style="font-size:14px;margin-right:4px;" aria-hidden="true"></i>${fam.name}: ${fam.ctx[c.name][n-1]} <a href="https://lnkd.in/dua4b9t" target="_blank" rel="noopener" style="color:#57068C;font-weight:800;text-decoration:underline;">Explore ${fam.name} paths in Career Hub <span aria-hidden="true">→</span><span class="sr-only"> (opens in new tab)</span></a></div>`:'';return`<div class="ccard"><div class="cc-hd"><div class="cc-ic" aria-hidden="true"><i class="ti ${c.icon}" aria-hidden="true"></i></div><div><h4 class="cc-nm">${c.name}</h4><div class="cc-df">${c.def}</div></div></div><div class="cc-beh">${c.bands[n-1]}</div>${famCtx}<a href="${c.urls[n-1].url}" target="_blank" rel="noopener" class="cc-ll"><i class="ti ti-brand-linkedin" aria-hidden="true"></i> ${c.urls[n-1].label}<span class="sr-only"> on LinkedIn Learning (opens in new tab)</span></a></div>`;}).join('');renderFamilyPath();}
 setBand(1);
 // Tabs pattern with manual activation: arrow keys move focus, Enter/Space selects
 (function(){
@@ -1085,7 +1091,6 @@ setBand(1);
     else if(e.key==='End')j=tabs.length-1;
     if(j===null)return;
     e.preventDefault();
-    tabs.forEach(function(t,k){t.tabIndex=(k===j)?0:-1;});
     tabs[j].focus();
   });
 })();
